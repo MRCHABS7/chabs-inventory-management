@@ -55,7 +55,8 @@ export const createProduct = (p: Omit<Product, 'id'>): Product => {
   const next: Product = { 
     ...p, 
     id: uuid(),
-    price: typeof p.price === 'number' ? p.price : parseFloat(String(p.price)) || 0,
+    sellingPrice: typeof p.sellingPrice === 'number' ? p.sellingPrice : parseFloat(String(p.sellingPrice)) || 0,
+    costPrice: typeof p.costPrice === 'number' ? p.costPrice : parseFloat(String(p.costPrice)) || 0,
     stock: typeof p.stock === 'number' ? p.stock : parseInt(String(p.stock)) || 0
   };
   set(KEY.products, [next, ...all]);

@@ -17,7 +17,7 @@ export default function InventoryView({ products }: { products: Product[] }) {
             <tr key={p.id}>
               <td>{p.name}</td>
               <td className={p.stock <= 0 ? 'text-red-600' : ''}>{p.stock}</td>
-              <td>{typeof p.price === 'number' ? p.price.toFixed(2) : '0.00'}</td>
+              <td>{typeof p.sellingPrice === 'number' ? p.sellingPrice.toFixed(2) : '0.00'}</td>
             </tr>
           ))}
         </tbody>

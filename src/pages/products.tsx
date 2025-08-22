@@ -23,7 +23,7 @@ export default function ProductsPage() {
               {products.map(p => (
                 <tr key={p.id}>
                   <td className="text-left">{p.name}</td>
-                  <td>{typeof p.price === 'number' ? p.price.toFixed(2) : '0.00'}</td>
+                  <td>{typeof p.sellingPrice === 'number' ? p.sellingPrice.toFixed(2) : '0.00'}</td>
                   <td>{p.stock || 0}</td>
                   <td><button className="btn" onClick={() => { deleteProduct(p.id); refresh(); }}>Delete</button></td>
                 </tr>
